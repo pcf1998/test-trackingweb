@@ -24,7 +24,6 @@ describe("Tracings", () => {
         });
     });
 
-
     describe("GET /tracings", () => {
         it("should return all the tracings", done => {
             request(server)
@@ -61,6 +60,7 @@ describe("Tracings", () => {
                     });
             });
         });
+
         describe("when the project id is invalid", () => {
             it("should return the NOT found message", done => {
                 request(server)
@@ -143,4 +143,47 @@ describe("Tracings", () => {
 
 
     });
+
+    describe("PUT /tracings/:projectID/projectName", () => {
+
+        describe("when the project is valid", () => {
+            it("should return all the tracings", done => {
+                request(server)
+                    .put("/tracings/5db57b283e7f3c0666c9c0b8/projectName")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .send({projectName: "2019-07-31"})
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: 'project name Successfully Updated!'});
+                        done(err);
+                    });
+            });
+        });
+
+        /*describe("when the project id is invalid", () => {
+            it("should return the NOT found message", done => {
+                request(server)
+                    .put("/tracings/999/projectName")
+                    .set("Accept", "application/json")
+                    .send({projectName: "2019-07-31"})
+                    .expect("Content-Type", /json/)
+                    .expect(200)
+                    .expect({
+                        message:
+                            'Cast to ObjectId failed for value "999" at path "_id" for model "Tracing"',
+                        name: 'CastError',
+                        stringValue: '"999"',
+                        kind: 'ObjectId',
+                        value: '999',
+                        path: '_id'
+                    }, (err, res) => {
+                        done(err);
+                    });
+            });
+        });*/
+
+    });
+
+
 });
