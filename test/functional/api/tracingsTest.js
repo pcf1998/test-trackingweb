@@ -224,7 +224,6 @@ describe("Tracings", () => {
             });
         });
 
-/*
         describe("when the input is same as the original one", () => {
             it("should return message that original status and new status can't be same", done => {
                 request(server)
@@ -239,7 +238,6 @@ describe("Tracings", () => {
                     });
             });
         });
-*/
 
     });
 
