@@ -175,7 +175,7 @@ router.updateStage = (req, res) => {
                             return res.json({message: "stage NOT Successfully Modified!", errmsg: err});
                         // return a suitable error message
                         else
-                            return res.json({message: 'stage Successfully Modified!', data: tracing});
+                            return res.json({message: 'stage Successfully Modified!'});
                         // return a suitable success message
                     })
                 }

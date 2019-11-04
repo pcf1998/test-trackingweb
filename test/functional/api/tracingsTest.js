@@ -241,5 +241,61 @@ describe("Tracings", () => {
 
     });
 
+    describe("PUT /tracings/:projectID/stages/:whichStageToModify", () => {
+
+        describe("when the project id is valid", () => {
+            it("should return all the tracings", done => {
+                request(server)
+                    .put("/tracings/5db57b283e7f3c0666c9c0b8/stages/1")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .send({stages: "stage test: testtesttest"})
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: 'stage Successfully Modified!'});
+                        done(err);
+                    });
+            });
+        });
+
+        /*describe("when the project id is invalid", () => {
+            it("should return the NOT found message", done => {
+                request(server)
+                    .put("/tracings/999/stages/1")
+                    .set("Accept", "application/json")
+                    .send({stages: "stage test: testtesttest"})
+                    .expect("Content-Type", /json/)
+                    .expect(200)
+                    .expect({
+                        message:
+                            'Cast to ObjectId failed for value "999" at path "_id" for model "Tracing"',
+                        name: 'CastError',
+                        stringValue: '"999"',
+                        kind: 'ObjectId',
+                        value: '999',
+                        path: '_id'
+                    }, (err, res) => {
+                        done(err);
+                    });
+            });
+        });
+
+        describe("when the input number of stage is illegal", () => {
+            it("should return message that original status and new status can't be same", done => {
+                request(server)
+                    .put("/tracings/5db57b283e7f3c0666c9c0b8/stages/0")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .send({stages: "stage test: testtesttest"})
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: "can NOT find the stage !!!"});
+                        done(err);
+                    });
+            });
+        });*/
+
+
+    });
 
 });
