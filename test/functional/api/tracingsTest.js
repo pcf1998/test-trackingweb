@@ -343,72 +343,72 @@ describe("Tracings", () => {
 
     });
 
-        describe("DELETE /tracings/:projectID/stages/:whichStageToDelete", () => {
+    describe("DELETE /tracings/:projectID/stages/:whichStageToDelete", () => {
 
-            describe("when the project id is valid and the number of stage is valid", () => {
-                it("should return confirmation message and delete the project", done => {
-                    request(server)
-                        .delete("/tracings/5db57b283e7f3c0666c9c0b8/stages/1")
-                        .set("Accept", "application/json")
-                        .expect("Content-Type", /json/)
-                        .expect(200)
-                        .end((err, res) => {
-                            expect({message: 'project Successfully Deleted!'});
-                            done(err);
-                        });
-                });
+        describe("when the project id is valid and the number of stage is valid", () => {
+            it("should return confirmation message and delete the project", done => {
+                request(server)
+                    .delete("/tracings/5db57b283e7f3c0666c9c0b8/stages/1")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: 'project Successfully Deleted!'});
+                        done(err);
+                    });
             });
-
-            describe("when the project id is invalid", () => {
-                it("should return the NOT found message", done => {
-                    request(server)
-                        .delete("/tracings/9999/stages/1")
-                        .set("Accept", "application/json")
-                        .expect("Content-Type", /json/)
-                        .expect(200)
-                        .expect({
-                            message:
-                                'Cast to ObjectId failed for value "9999" at path "_id" for model "Tracing"',
-                            name: 'CastError',
-                            stringValue: '"9999"',
-                            kind: 'ObjectId',
-                            value: '9999',
-                            path: '_id'
-                        }, (err, res) => {
-                            done(err);
-                        });
-                });
-            });
-
-            describe("when the the number of stage is invalid", () => {
-                it("should return the NOT found message", done => {
-                    request(server)
-                        .delete("/tracings/5db57b283e7f3c0666c9c0b8/stages/0")
-                        .set("Accept", "application/json")
-                        .expect("Content-Type", /json/)
-                        .expect(200)
-                        .end((err, res) => {
-                            expect({message: "can NOT find the stage !!!"});
-                            done(err);
-                        });
-                });
-            });
-
-            /*describe("when the the format of input number is illegal", () => {
-                it("should return the NOT found message", done => {
-                    request(server)
-                        .delete("/tracings/5db57b283e7f3c0666c9c0b8/stages/abc")
-                        .set("Accept", "application/json")
-                        .expect("Content-Type", /json/)
-                        .expect(200)
-                        .end((err, res) => {
-                            expect({message: "which Stage To Delete MUST be a legal NUMBER"});
-                            done(err);
-                        });
-                });
-            });*/
-
-
         });
+
+        describe("when the project id is invalid", () => {
+            it("should return the NOT found message", done => {
+                request(server)
+                    .delete("/tracings/9999/stages/1")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .expect(200)
+                    .expect({
+                        message:
+                            'Cast to ObjectId failed for value "9999" at path "_id" for model "Tracing"',
+                        name: 'CastError',
+                        stringValue: '"9999"',
+                        kind: 'ObjectId',
+                        value: '9999',
+                        path: '_id'
+                    }, (err, res) => {
+                        done(err);
+                    });
+            });
+        });
+
+        describe("when the the number of stage is invalid", () => {
+            it("should return the NOT found message", done => {
+                request(server)
+                    .delete("/tracings/5db57b283e7f3c0666c9c0b8/stages/0")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: "can NOT find the stage !!!"});
+                        done(err);
+                    });
+            });
+        });
+
+        describe("when the the format of input number is illegal", () => {
+            it("should return the NOT found message", done => {
+                request(server)
+                    .delete("/tracings/5db57b283e7f3c0666c9c0b8/stages/abc")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: "which Stage To Delete MUST be a legal NUMBER"});
+                        done(err);
+                    });
+            });
+        });
+
+
+    });
 
 });
