@@ -63,7 +63,7 @@ router.addTracing = (req, res) => {
             return res.json({message: "Tracing NOT Successfully Added!", errmsg: err});
         // return a suitable error message
         else
-            return res.json({message: 'Tracing Successfully Added!', data: tracing});
+            return res.json({message: 'Tracing Successfully Added!'});
         // return a suitable success message
     });
 };
@@ -221,7 +221,7 @@ router.addStages = (req, res) => {
                             return res.json({message: "stages NOT Successfully Added!", errmsg: err});
                         // return a suitable error message
                         else
-                            return res.json({message: 'stages Successfully Added!', data: tracing.stages});
+                            return res.json({message: 'stages Successfully Added!'});
                         // return a suitable success message
                     })
                 }

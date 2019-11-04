@@ -3,10 +3,28 @@ const server = require("../../../bin/www");
 const expect = chai.expect;
 const request = require("supertest");
 const _ = require("lodash");
+let mongoose = require('../../../routes/db');
 
 const Tracing = require("../../../models/tracings");
 
+
 describe("Tracings", () => {
+
+    before(function (done) {
+        let username = 'leopan';
+        let password = 'leo123456';
+        let mongodburl = 'mongodb+srv://' + username + ':' + password + '@wit-tracking-system-cluster-t9uwg.mongodb.net/tracingsdb';
+        mongoose.connect(mongodburl, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+
+        let db = mongoose.connection;
+        db.on('error', console.error.bind(console, 'connection error'));
+        db.once('open', function () {
+            console.log('We are connected to MongoDB Atlas!');
+            done();
+        });
+    });
+
+
     describe("GET /tracings", () => {
         it("should return all the tracings", done => {
             request(server)
@@ -68,23 +86,62 @@ describe("Tracings", () => {
                 .expect(200)
                 .expect({message: 'Tracing Successfully Added!'});
         });
-        after(() => {
-            return request(server)
-                .get("/tracings")
-                .expect(200)
-                .then(res => {
-                    expect(res.body.length).equals(5);
-                    const result = _.map(res.body, tracings => {
-                        return {
-                            projectName: tracings.projectName
-                        };
+    });
+
+    describe("POST /tracings/:projectID/stages", () => {
+        describe("when the project id is valid", () => {
+            it("should return confirmation message and update stages", done => {
+                request(server)
+                    .post("/tracings/5db57b283e7f3c0666c9c0b8/stages")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .send({stages: ["stage test1: testtest11", "stage test2: testtest22"]})
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: 'stages Successfully Added!'});
+                        done(err);
                     });
-                    expect(result).to.deep.include({projectName: "test"});
-                });
+            });
         });
+
+        /*describe("when the project id is invalid", () => {
+            it("should return the NOT found message", done => {
+                request(server)
+                    .post("/tracings/9999/stages")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .send({stages: ["stage test1: testtest11", "stage test2: testtest22"]})
+                    .expect(200)
+                    .expect({
+                        message:
+                            'Cast to ObjectId failed for value "9999" at path "_id" for model "Tracing"',
+                        name: 'CastError',
+                        stringValue: '"9999"',
+                        kind: 'ObjectId',
+                        value: '9999',
+                        path: '_id'
+                    }, (err, res) => {
+                        done(err);
+                    });
+            });
+        });*/
+
+        /*describe("when the number of added stages is 0", () => {
+            it("should return illegal input message", done => {
+                request(server)
+                    .post("/tracings/5db57b283e7f3c0666c9c0b8/stages")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .send({stages: []})
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: "the number of added stages can't be 0 !"});
+                        done(err);
+                    });
+            });
+        });
+    */
 
 
     });
-
-
 });
