@@ -280,7 +280,7 @@ describe("Tracings", () => {
             });
         });
 
-        /*describe("when the input number of stage is illegal", () => {
+        describe("when the input number of stage is illegal", () => {
             it("should return message that original status and new status can't be same", done => {
                 request(server)
                     .put("/tracings/5db57b283e7f3c0666c9c0b8/stages/0")
@@ -293,7 +293,7 @@ describe("Tracings", () => {
                         done(err);
                     });
             });
-        });*/
+        });
 
 
     });
