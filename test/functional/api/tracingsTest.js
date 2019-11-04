@@ -380,7 +380,7 @@ describe("Tracings", () => {
                 });
             });
 
-            /*describe("when the the number of stage is invalid", () => {
+            describe("when the the number of stage is invalid", () => {
                 it("should return the NOT found message", done => {
                     request(server)
                         .delete("/tracings/5db57b283e7f3c0666c9c0b8/stages/0")
@@ -392,7 +392,7 @@ describe("Tracings", () => {
                             done(err);
                         });
                 });
-            });*/
+            });
 
             /*describe("when the the format of input number is illegal", () => {
                 it("should return the NOT found message", done => {
