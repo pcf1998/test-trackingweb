@@ -57,16 +57,34 @@ describe("Tracings", () => {
         });
     });
 
+    describe("POST /tracings", () => {
+        it("should return confirmation message and update Tracing", () => {
+            let tracing = {
+                projectName: "test"
+            };
+            return request(server)
+                .post("/tracings")
+                .send(tracing)
+                .expect(200)
+                .expect({message: 'Tracing Successfully Added!'});
+        });
+        after(() => {
+            return request(server)
+                .get("/tracings")
+                .expect(200)
+                .then(res => {
+                    expect(res.body.length).equals(5);
+                    const result = _.map(res.body, tracings => {
+                        return {
+                            projectName: tracings.projectName
+                        };
+                    });
+                    expect(result).to.deep.include({projectName: "test"});
+                });
+        });
 
 
-
-
-
-
-
-
-
-
+    });
 
 
 });
