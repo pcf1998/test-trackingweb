@@ -140,7 +140,7 @@ router.updateProjectStatus = (req, res) => {
                             return res.json({message: "project status NOT Successfully Updated!", errmsg: err});
                         // return a error message
                         else
-                            return res.json({message: 'project status Successfully Updated!', data: tracing});
+                            return res.json({message: 'project status Successfully Updated!'});
                         // return a success message
                     })
                 }

@@ -146,7 +146,7 @@ describe("Tracings", () => {
 
     describe("PUT /tracings/:projectID/projectName", () => {
 
-        describe("when the project is valid", () => {
+        describe("when the project id is valid", () => {
             it("should return all the tracings", done => {
                 request(server)
                     .put("/tracings/5db57b283e7f3c0666c9c0b8/projectName")
@@ -182,6 +182,62 @@ describe("Tracings", () => {
                     });
             });
         });
+
+    });
+
+    describe("PUT /tracings/:projectID/status", () => {
+
+        describe("when the project id is valid", () => {
+            it("should return all the tracings", done => {
+                request(server)
+                    .put("/tracings/5db57b283e7f3c0666c9c0b8/status")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .send({status: "finished"})
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: 'project status Successfully Updated!'});
+                        done(err);
+                    });
+            });
+        });
+
+        /*describe("when the project id is invalid", () => {
+            it("should return the NOT found message", done => {
+                request(server)
+                    .put("/tracings/999/status")
+                    .set("Accept", "application/json")
+                    .send({status: "finished"})
+                    .expect("Content-Type", /json/)
+                    .expect(200)
+                    .expect({
+                        message:
+                            'Cast to ObjectId failed for value "999" at path "_id" for model "Tracing"',
+                        name: 'CastError',
+                        stringValue: '"999"',
+                        kind: 'ObjectId',
+                        value: '999',
+                        path: '_id'
+                    }, (err, res) => {
+                        done(err);
+                    });
+            });
+        });
+
+        describe("when the input is same as the original one", () => {
+            it("should return message that original status and new status can't be same", done => {
+                request(server)
+                    .put("/tracings/5db57b283e7f3c0666c9c0b8/status")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .send({status: "finished"})
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: "original status and new status can't be same!"});
+                        done(err);
+                    });
+            });
+        });*/
 
     });
 
