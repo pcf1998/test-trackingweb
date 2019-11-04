@@ -343,7 +343,6 @@ describe("Tracings", () => {
 
     });
 
-    /*
         describe("DELETE /tracings/:projectID/stages/:whichStageToDelete", () => {
 
             describe("when the project id is valid and the number of stage is valid", () => {
@@ -360,7 +359,7 @@ describe("Tracings", () => {
                 });
             });
 
-            describe("when the project id is invalid", () => {
+            /*describe("when the project id is invalid", () => {
                 it("should return the NOT found message", done => {
                     request(server)
                         .delete("/tracings/9999/stages/1")
@@ -379,9 +378,9 @@ describe("Tracings", () => {
                             done(err);
                         });
                 });
-            });
+            });*/
 
-            describe("when the the number of stage is invalid", () => {
+            /*describe("when the the number of stage is invalid", () => {
                 it("should return the NOT found message", done => {
                     request(server)
                         .delete("/tracings/5db57b283e7f3c0666c9c0b8/stages/0")
@@ -393,9 +392,9 @@ describe("Tracings", () => {
                             done(err);
                         });
                 });
-            });
+            });*/
 
-            describe("when the the format of input number is illegal", () => {
+            /*describe("when the the format of input number is illegal", () => {
                 it("should return the NOT found message", done => {
                     request(server)
                         .delete("/tracings/5db57b283e7f3c0666c9c0b8/stages/abc")
@@ -407,10 +406,9 @@ describe("Tracings", () => {
                             done(err);
                         });
                 });
-            });
+            });*/
 
 
         });
-    */
 
 });
