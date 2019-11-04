@@ -29,7 +29,7 @@ describe("Tracings", () => {
         });
     });
 
-    /*describe("GET /tracings/:projectID", () => {
+    describe("GET /tracings/:projectID", () => {
         describe("when the project id is valid", () => {
             it("should return the matching project", done => {
                 request(server)
@@ -55,7 +55,7 @@ describe("Tracings", () => {
                     });
             });
         });
-    });*/
+    });
 
 
 
