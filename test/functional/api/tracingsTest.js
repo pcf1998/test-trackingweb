@@ -359,7 +359,7 @@ describe("Tracings", () => {
                 });
             });
 
-            /*describe("when the project id is invalid", () => {
+            describe("when the project id is invalid", () => {
                 it("should return the NOT found message", done => {
                     request(server)
                         .delete("/tracings/9999/stages/1")
@@ -378,7 +378,7 @@ describe("Tracings", () => {
                             done(err);
                         });
                 });
-            });*/
+            });
 
             /*describe("when the the number of stage is invalid", () => {
                 it("should return the NOT found message", done => {
