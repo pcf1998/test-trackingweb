@@ -104,7 +104,7 @@ describe("Tracings", () => {
             });
         });
 
-        /*describe("when the project id is invalid", () => {
+        describe("when the project id is invalid", () => {
             it("should return the NOT found message", done => {
                 request(server)
                     .post("/tracings/9999/stages")
@@ -124,9 +124,9 @@ describe("Tracings", () => {
                         done(err);
                     });
             });
-        });*/
+        });
 
-        /*describe("when the number of added stages is 0", () => {
+        describe("when the number of added stages is 0", () => {
             it("should return illegal input message", done => {
                 request(server)
                     .post("/tracings/5db57b283e7f3c0666c9c0b8/stages")
@@ -140,7 +140,6 @@ describe("Tracings", () => {
                     });
             });
         });
-    */
 
 
     });
