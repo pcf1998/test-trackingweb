@@ -85,4 +85,4 @@ git commit -m "Invalid project id of add team tested"
 
 git checkout master
 
-git merge update-teamName-test
+git merge get-tasks-test

@@ -150,22 +150,19 @@ describe("Task", () => {
         });
     });
 
-
-    /*
-        describe("POST /tracings/:projectID/teams/:teamID/tasks", () => {
-            it("should return confirmation message and add ask", () => {
-                let task = {
-                    taskName: "task name test test test",
-                    membersID: "5db578ca3e7f3c0666c9c0b1"
-                };
-                return request(server)
-                    .post("/tracings/5db57b283e7f3c0666c9c0b8/teams/5db58d338b292e0a03a64b53/tasks")
-                    .send(task)
-                    .expect(200)
-                    .expect({message: 'task Successfully Added!'});
-            });
+    describe("POST /tracings/:projectID/teams/:teamID/tasks", () => {
+        it("should return confirmation message and add ask", () => {
+            let task = {
+                taskName: "task name test test test",
+                membersID: "5db578ca3e7f3c0666c9c0b1"
+            };
+            return request(server)
+                .post("/tracings/5db57b283e7f3c0666c9c0b8/teams/5db58d338b292e0a03a64b53/tasks")
+                .send(task)
+                .expect(200)
+                .expect({message: 'task Successfully Added!'});
         });
-    */
+    });
 
 
 });
