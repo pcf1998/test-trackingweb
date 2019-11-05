@@ -216,7 +216,7 @@ router.updateTaskContent = (req, res) => {
                                 if (err)
                                     return res.json({message: "task content NOT Successfully Update!", errmsg: err});
                                 else
-                                    return res.json({message: 'task content Successfully Update!', data: task});
+                                    return res.json({message: 'task content Successfully Update!'});
                             })
                         }
                     }
@@ -256,7 +256,7 @@ router.updateTaskName = (req, res) => {
                                 if (err)
                                     return res.json({message: "task name NOT Successfully Update!", errmsg: err});
                                 else
-                                    return res.json({message: 'task name Successfully Update!', data: task});
+                                    return res.json({message: 'task name Successfully Update!'});
                             })
                         }
                     }
@@ -296,7 +296,7 @@ router.updateTaskStatus = (req, res) => {
                                 if (err)
                                     return res.json({message: "task status NOT Successfully Update!", errmsg: err});
                                 else
-                                    return res.json({message: 'task status Successfully Update!', data: task});
+                                    return res.json({message: 'task status Successfully Update!'});
                             })
                         }
                     }

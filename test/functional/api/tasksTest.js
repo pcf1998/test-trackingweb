@@ -164,5 +164,53 @@ describe("Task", () => {
         });
     });
 
+    describe("PUT /tracings/:projectID/teams/:teamID/tasks/:taskID/taskContent", () => {
+        it("should return confirmation message and update task content", done => {
+            request(server)
+                .put(`/tracings/5db57b283e7f3c0666c9c0b8/teams/5db58d338b292e0a03a64b53/tasks/5db5d612aa962a17eaf9ccb0/taskContent`)
+                .set("Accept", "application/json")
+                .expect("Content-Type", /json/)
+                .send({taskContent: "task content -test"})
+                .expect(200)
+                .end((err, res) => {
+                    expect({message: 'task content Successfully Update!'});
+                    done(err);
+                });
+        });
+    });
+
+    /*
+        describe("PUT /tracings/:projectID/teams/:teamID/tasks/:taskID//taskName", () => {
+            it("should return confirmation message and update task name", done => {
+                request(server)
+                    .put(`/tracings/5db57b283e7f3c0666c9c0b8/teams/5db58d338b292e0a03a64b53/tasks/5db5d612aa962a17eaf9ccb0/taskName`)
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .send({taskName: "task0009 -test"})
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: 'task name Successfully Update!'});
+                        done(err);
+                    });
+            });
+        });
+    */
+
+    /*
+        describe("PUT /tracings/:projectID/teams/:teamID/tasks/:taskID/taskStatus", () => {
+            it("should return confirmation message and update task status", done => {
+                request(server)
+                    .put(`/tracings/5db57b283e7f3c0666c9c0b8/teams/5db58d338b292e0a03a64b53/tasks/5db5d612aa962a17eaf9ccb0/taskStatus`)
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .send({status: "finished"})
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: 'task status Successfully Update!'});
+                        done(err);
+                    });
+            });
+        });
+    */
 
 });
