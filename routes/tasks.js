@@ -172,7 +172,7 @@ router.addTask = (req, res) => {
                                                         errmsg: err
                                                     });
                                                 else
-                                                    return res.json({message: 'task Successfully Added!', data: task});
+                                                    return res.json({message: 'task Successfully Added!'});
                                             })
                                         }
                                     })

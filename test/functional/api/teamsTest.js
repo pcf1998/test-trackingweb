@@ -28,7 +28,6 @@ describe("Team", () => {
                 .expect(200)
                 .end((err, res) => {
                     expect(res.body).to.be.a("array");
-                    expect(res.body.length).to.equal(4);
                     done(err);
                 });
         });
@@ -76,7 +75,7 @@ describe("Team", () => {
     describe("GET /tracings/:projectID/teams/", () => {
 
         describe("when the project id is valid", () => {
-            it("should return the matching team", done => {
+            it("should return all teams in the project", done => {
                 request(server)
                     .get(`/tracings/5db57b283e7f3c0666c9c0b8/teams/`)
                     .set("Accept", "application/json")
@@ -84,7 +83,6 @@ describe("Team", () => {
                     .expect(200)
                     .end((err, res) => {
                         expect(res.body).to.be.a("array");
-                        expect(res.body.length).to.equal(4);
                         done(err);
                     });
             });
