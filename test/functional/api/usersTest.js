@@ -350,7 +350,7 @@ describe("User", () => {
             });
         });
 
-        /*describe("when the user id is invalid", () => {
+        describe("when the user id is invalid", () => {
             it("should return the NOT found message", done => {
                 request(server)
                     .delete("/users/9999")
@@ -373,7 +373,7 @@ describe("User", () => {
                         done(err);
                     });
             });
-        });*/
+        });
 
 
     });
