@@ -79,10 +79,10 @@ git checkout -b update-teamName-test
 
 git add -A
 
-git commit -m "Add team tested"
+git commit -m "Update team name tested"
 
 git commit -m "Invalid project id of add team tested"
 
 git checkout master
 
-git merge add-team-test
+git merge update-teamName-test

@@ -233,42 +233,42 @@ describe("Team", () => {
         });
     });
 
-    /*
-        describe("PUT /tracings/:projectID/teams/:teamID/teamMembersID/:whichTeamMemberIDToUpdate", () => {
+    describe("PUT /tracings/:projectID/teams/:teamID/teamMembersID/:whichTeamMemberIDToUpdate", () => {
 
-            describe("when project id, team members id and index of the team member are valid", () => {
-                it("should return confirmation message and update team member id", done => {
-                    request(server)
-                        .put("/tracings/5db57b283e7f3c0666c9c0b8/teams/5db5d622aa962a17eaf9ccb1/teamMembersID/1")
-                        .set("Accept", "application/json")
-                        .expect("Content-Type", /json/)
-                        .send({teamMembersID: "5db578de3e7f3c0666c9c0b2"})
-                        .expect(200)
-                        .end((err, res) => {
-                            expect({message: 'team member ID Successfully Modified!'});
-                            done(err);
-                        });
-                });
+        describe("when project id, team members id and index of the team member are valid", () => {
+            it("should return confirmation message and update team member id", done => {
+                request(server)
+                    .put("/tracings/5db57b283e7f3c0666c9c0b8/teams/5db5d622aa962a17eaf9ccb1/teamMembersID/1")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .send({teamMembersID: "5db578de3e7f3c0666c9c0b2"})
+                    .expect(200)
+                    .end((err, res) => {
+                        expect({message: 'team member ID Successfully Modified!'});
+                        done(err);
+                    });
             });
-
-            describe("when project id, team members id are valid and index of team member id is invalid", () => {
-                it("should return the NOT found message", done => {
-                    request(server)
-                        .put("/tracings/5db57b283e7f3c0666c9c0b8/teams/5db5d622aa962a17eaf9ccb1/teamMembersID/9999")
-                        .set("Accept", "application/json")
-                        .expect("Content-Type", /json/)
-                        .send({teamMembersID: "5db578de3e7f3c0666c9c0b2"})
-                        .expect(200)
-                        .end((err, res) => {
-                            expect({message: "can NOT find the team member ID !!!"});
-                            done(err);
-                        });
-                });
-            });
-
-
         });
-    */
+
+        /*
+                describe("when project id, team members id are valid and index of team member id is invalid", () => {
+                    it("should return the NOT found message", done => {
+                        request(server)
+                            .put("/tracings/5db57b283e7f3c0666c9c0b8/teams/5db5d622aa962a17eaf9ccb1/teamMembersID/9999")
+                            .set("Accept", "application/json")
+                            .expect("Content-Type", /json/)
+                            .send({teamMembersID: "5db578de3e7f3c0666c9c0b2"})
+                            .expect(200)
+                            .end((err, res) => {
+                                expect({message: "can NOT find the team member ID !!!"});
+                                done(err);
+                            });
+                    });
+                });
+        */
+
+
+    });
 
     /*
         describe("DELETE /tracings/:projectID/teams/:teamID", () => {
