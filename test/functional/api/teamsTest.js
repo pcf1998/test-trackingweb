@@ -73,47 +73,45 @@ describe("Team", () => {
 
     });
 
-    /*
-        describe("GET /tracings/:projectID/teams/", () => {
+    describe("GET /tracings/:projectID/teams/", () => {
 
-            describe("when the project id is valid", () => {
-                it("should return the matching team", done => {
-                    request(server)
-                        .get(`/tracings/5db57b283e7f3c0666c9c0b8/teams/`)
-                        .set("Accept", "application/json")
-                        .expect("Content-Type", /json/)
-                        .expect(200)
-                        .end((err, res) => {
-                            expect(res.body).to.be.a("array");
-                            expect(res.body.length).to.equal(2);
-                            done(err);
-                        });
-                });
+        describe("when the project id is valid", () => {
+            it("should return the matching team", done => {
+                request(server)
+                    .get(`/tracings/5db57b283e7f3c0666c9c0b8/teams/`)
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .expect(200)
+                    .end((err, res) => {
+                        expect(res.body).to.be.a("array");
+                        expect(res.body.length).to.equal(2);
+                        done(err);
+                    });
             });
-
-            describe("when the project id is invalid", () => {
-                it("should return the NOT found message", done => {
-                    request(server)
-                        .get("/tracings/9999/teams/")
-                        .set("Accept", "application/json")
-                        .expect("Content-Type", /json/)
-                        .expect(200)
-                        .expect({
-                            message:
-                                'Cast to ObjectId failed for value "9999" at path "_id" for model "Tracing"',
-                            name: 'CastError',
-                            stringValue: '"9999"',
-                            kind: 'ObjectId',
-                            value: '9999',
-                            path: '_id'
-                        }, (err, res) => {
-                            done(err);
-                        });
-                });
-            });
-
         });
-    */
+
+        describe("when the project id is invalid", () => {
+            it("should return the NOT found message", done => {
+                request(server)
+                    .get("/tracings/9999/teams/")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .expect(200)
+                    .expect({
+                        message:
+                            'Cast to ObjectId failed for value "9999" at path "_id" for model "Tracing"',
+                        name: 'CastError',
+                        stringValue: '"9999"',
+                        kind: 'ObjectId',
+                        value: '9999',
+                        path: '_id'
+                    }, (err, res) => {
+                        done(err);
+                    });
+            });
+        });
+
+    });
 
     /*
         describe("GET /tracings/:projectID/teams/:teamID", () => {
