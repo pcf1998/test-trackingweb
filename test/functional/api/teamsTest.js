@@ -284,32 +284,30 @@ describe("Team", () => {
             });
         });
 
-        /*
-                describe("when the project id is invalid", () => {
-                    it("should return the NOT found message", done => {
-                        request(server)
-                            .delete("/tracings/9999/teams/5dc15528ff07640c6947bfc7")
-                            .set("Accept", "application/json")
-                            .expect("Content-Type", /json/)
-                            .expect(200)
-                            .expect({
-                                message: 'Project NOT Found!',
-                                errmsg:
-                                    {
-                                        message:
-                                            'Cast to ObjectId failed for value "9999" at path "_id" for model "Tracing"',
-                                        name: 'CastError',
-                                        stringValue: '"9999"',
-                                        kind: 'ObjectId',
-                                        value: '9999',
-                                        path: '_id'
-                                    }
-                            }, (err, res) => {
-                                done(err);
-                            });
+        describe("when the project id is invalid", () => {
+            it("should return the NOT found message", done => {
+                request(server)
+                    .delete("/tracings/9999/teams/5dc15528ff07640c6947bfc7")
+                    .set("Accept", "application/json")
+                    .expect("Content-Type", /json/)
+                    .expect(200)
+                    .expect({
+                        message: 'Project NOT Found!',
+                        errmsg:
+                            {
+                                message:
+                                    'Cast to ObjectId failed for value "9999" at path "_id" for model "Tracing"',
+                                name: 'CastError',
+                                stringValue: '"9999"',
+                                kind: 'ObjectId',
+                                value: '9999',
+                                path: '_id'
+                            }
+                    }, (err, res) => {
+                        done(err);
                     });
-                });
-        */
+            });
+        });
 
         /*
                 describe("when the team id is invalid", () => {
