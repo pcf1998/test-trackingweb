@@ -1,10 +1,13 @@
 {
-  "name": "trackingweb-1.0",
+  "name": "trackingweb-2.0",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "NODE_ENV=dev && node bin/www",
-    "test": "NODE_ENV=test mocha test/functional/api/tasksTest.js --exit"
+    "test": "NODE_ENV=test mocha test/functional/api",
+    "lint": "esw  ./test ./routes ./models/ app.js bin/www ",
+    "lint:fix": "npm run lint -- --fix",
+    "lint:watch": "npm run lint -- --watch"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",
@@ -21,6 +24,8 @@
   },
   "devDependencies": {
     "chai": "^4.0.2",
+    "eslint": "^6.6.0",
+    "eslint-watch": "^6.0.1",
     "mocha": "^6.2.0",
     "supertest": "^4.0.2"
   }
