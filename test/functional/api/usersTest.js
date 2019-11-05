@@ -74,7 +74,7 @@ describe("User", () => {
 
     });
 
-    /*describe("POST /users", () => {
+    describe("POST /users", () => {
         it("should return confirmation message and update User", () => {
             let user = {
                 userName: "testtesttest",
@@ -90,7 +90,7 @@ describe("User", () => {
                 .expect(200)
                 .expect({message: 'User Successfully Added!'});
         });
-    });*/
+    });
 
     /*describe("DELETE /users/:userID", () => {
 
