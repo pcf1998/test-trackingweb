@@ -34,7 +34,7 @@ describe("User", () => {
                 });
         });
     });
-/*
+
     describe("GET /users/:userID", () => {
         describe("when the user id is valid", () => {
             it("should return the matching user", done => {
@@ -50,7 +50,7 @@ describe("User", () => {
             });
         });
 
-        describe("when the user id is invalid", () => {
+        /*describe("when the user id is invalid", () => {
             it("should return the NOT found message", done => {
                 request(server)
                     .get("/users/9999")
@@ -69,10 +69,11 @@ describe("User", () => {
                         done(err);
                     });
             });
-        });
+        });*/
+
     });
 
-    describe("POST /users", () => {
+    /*describe("POST /users", () => {
         it("should return confirmation message and update User", () => {
             let user = {
                 userName: "testtesttest",
@@ -88,9 +89,9 @@ describe("User", () => {
                 .expect(200)
                 .expect({message: 'User Successfully Added!'});
         });
-    });
+    });*/
 
-    describe("DELETE /users/:userID", () => {
+    /*describe("DELETE /users/:userID", () => {
 
         describe("when the user id is valid", () => {
             it("should return confirmation message and delete the user", done => {
