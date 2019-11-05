@@ -74,7 +74,7 @@ Name: ... your name ...
 
 git checkout master
 
-git checkout -b add-team-test
+git checkout -b update-teamName-test
 
 
 git add -A

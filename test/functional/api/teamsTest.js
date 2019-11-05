@@ -218,22 +218,20 @@ describe("Team", () => {
 
     });
 
-    /*
-        describe("PUT /tracings/:projectID/teams/:teamID/teamName", () => {
-            it("should return confirmation message and update team name", done => {
-                request(server)
-                    .put("/tracings/5db57b283e7f3c0666c9c0b8/teams/5db5d622aa962a17eaf9ccb1/teamName")
-                    .set("Accept", "application/json")
-                    .expect("Content-Type", /json/)
-                    .send({teamName: "team008-test"})
-                    .expect(200)
-                    .end((err, res) => {
-                        expect({message: 'team name Successfully Update!'});
-                        done(err);
-                    });
-            });
+    describe("PUT /tracings/:projectID/teams/:teamID/teamName", () => {
+        it("should return confirmation message and update team name", done => {
+            request(server)
+                .put("/tracings/5db57b283e7f3c0666c9c0b8/teams/5db5d622aa962a17eaf9ccb1/teamName")
+                .set("Accept", "application/json")
+                .expect("Content-Type", /json/)
+                .send({teamName: "team008-test"})
+                .expect(200)
+                .end((err, res) => {
+                    expect({message: 'team name Successfully Update!'});
+                    done(err);
+                });
         });
-    */
+    });
 
     /*
         describe("PUT /tracings/:projectID/teams/:teamID/teamMembersID/:whichTeamMemberIDToUpdate", () => {
