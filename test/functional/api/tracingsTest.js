@@ -145,7 +145,7 @@ describe("Tracing", () => {
     describe("PUT /tracings/:projectID/projectName", () => {
 
         describe("when the project id is valid", () => {
-            it("should return all the tracings", done => {
+            it("should update the tracing", done => {
                 request(server)
                     .put("/tracings/5db57b283e7f3c0666c9c0b8/projectName")
                     .set("Accept", "application/json")
