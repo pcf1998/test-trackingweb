@@ -117,7 +117,7 @@ router.addTeam = (req, res) => {
                             if (err)
                                 return res.json({message: "team Added BUT project NOT Updated!", errmsg: err});
                             else
-                                return res.json({message: 'team Successfully Added!', data: team});
+                                return res.json({message: 'team Successfully Added!'});
                             // return a suitable success message
                         })
                     }
@@ -215,7 +215,7 @@ router.updateTeamName = (req, res) => {
                                 if (err)
                                     return res.json({message: "team name NOT Successfully Update!", errmsg: err});
                                 else
-                                    return res.json({message: 'team name Successfully Update!', data: team});
+                                    return res.json({message: 'team name Successfully Update!'});
                             })
                         }
                     }
@@ -263,7 +263,7 @@ router.updateTeamMemberID = (req, res) => {
                                         });
                                     // return a suitable error message
                                     else
-                                        return res.json({message: 'team member ID Successfully Modified!', data: team});
+                                        return res.json({message: 'team member ID Successfully Modified!'});
                                     // return a suitable success message
                                 })
                             }

@@ -74,7 +74,7 @@ describe("User", () => {
     });
 
     describe("POST /users", () => {
-        it("should return confirmation message and update User", () => {
+        it("should return confirmation message and add user", () => {
             let user = {
                 userName: "testtesttest",
                 userPassword: "test123456",

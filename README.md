@@ -74,19 +74,15 @@ Name: ... your name ...
 
 git checkout master
 
-git checkout -b get-teams-test
+git checkout -b add-team-test
 
 
 git add -A
 
-git commit -m "Get all teams tested"
+git commit -m "Add team tested"
 
-git commit -m "Get specific team tested"
-
-git commit -m "Get all teams in specific project tested"
-
-git commit -m "Get specific team in specific project tested"
+git commit -m "Invalid project id of add team tested"
 
 git checkout master
 
-git merge get-teams-test
+git merge add-team-test
