@@ -1,0 +1,7 @@
+file:
+  - ./test/functional/api/dbConnectionTest.js
+  - ./test/functional/api/tasksTest.js
+  - ./test/functional/api/teamsTest.js
+  - ./test/functional/api/tracingsTest.js
+  - ./test/functional/api/usersTest.js
+exit: true
