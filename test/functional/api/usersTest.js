@@ -36,6 +36,7 @@ describe("User", () => {
     });
 
     describe("GET /users/:userID", () => {
+
         describe("when the user id is valid", () => {
             it("should return the matching user", done => {
                 request(server)
@@ -50,7 +51,7 @@ describe("User", () => {
             });
         });
 
-        /*describe("when the user id is invalid", () => {
+        describe("when the user id is invalid", () => {
             it("should return the NOT found message", done => {
                 request(server)
                     .get("/users/9999")
@@ -69,7 +70,7 @@ describe("User", () => {
                         done(err);
                     });
             });
-        });*/
+        });
 
     });
 
