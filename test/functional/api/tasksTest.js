@@ -209,4 +209,21 @@ describe("Task", () => {
         });
     });
 
-});
+    describe("DELETE /tracings/:projectID/teams/:teamID/tasks/:taskID", () => {
+        it("should return confirmation message and delete the task", done => {
+            request(server)
+                .delete(`/tracings/5db57b283e7f3c0666c9c0b8/teams/5db58d338b292e0a03a64b53/tasks/5dc17978bc4860157b43bf25`)
+                .set("Accept", "application/json")
+                .expect("Content-Type", /json/)
+                .expect(200)
+                .end((err, res) => {
+                    expect({message: 'task Successfully Deleted!'});
+                    done(err);
+                });
+        });
+
+
+    });
+
+
+    });
