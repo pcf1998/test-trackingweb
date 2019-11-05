@@ -5,10 +5,7 @@ const request = require("supertest");
 const _ = require("lodash");
 let mongoose = require('../../../routes/db');
 
-const Tracing = require("../../../models/tracings");
-
-
-describe("Tracings", () => {
+describe("Tracing", () => {
 
     before(function (done) {
         let username = 'leopan';
@@ -76,7 +73,7 @@ describe("Tracings", () => {
         });
     });
 
-    describe("POST /tracings", () => {
+    /*describe("POST /tracings", () => {
         it("should return confirmation message and update Tracing", () => {
             let tracing = {
                 projectName: "test"
@@ -409,6 +406,6 @@ describe("Tracings", () => {
         });
 
 
-    });
+    });*/
 
 });
