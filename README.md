@@ -79,7 +79,7 @@ git checkout -b get-tasks-test
 
 git add -A
 
-git commit -m "Update team name tested"
+git commit -m "Get the task in a specific project tested"
 
 git commit -m "Invalid project id of add team tested"
 
