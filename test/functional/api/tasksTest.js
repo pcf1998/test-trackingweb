@@ -136,21 +136,19 @@ describe("Task", () => {
         });
     });
 
-    /*
-        describe("GET /tracings/:projectID/teams/:teamID/tasks/:taskID", () => {
-            it("should return the specific task in the team", done => {
-                request(server)
-                    .get(`/tracings/5db57b283e7f3c0666c9c0b8/teams/5db58d338b292e0a03a64b53/tasks/5db5d612aa962a17eaf9ccb0`)
-                    .set("Accept", "application/json")
-                    .expect("Content-Type", /json/)
-                    .expect(200)
-                    .end((err, res) => {
-                        expect(res.body).to.deep.include({_id: "5db5d612aa962a17eaf9ccb0"});
-                        done(err);
-                    });
-            });
+    describe("GET /tracings/:projectID/teams/:teamID/tasks/:taskID", () => {
+        it("should return the specific task in the team", done => {
+            request(server)
+                .get(`/tracings/5db57b283e7f3c0666c9c0b8/teams/5db58d338b292e0a03a64b53/tasks/5db5d612aa962a17eaf9ccb0`)
+                .set("Accept", "application/json")
+                .expect("Content-Type", /json/)
+                .expect(200)
+                .end((err, res) => {
+                    expect(res.body).to.deep.include({_id: "5db5d612aa962a17eaf9ccb0"});
+                    done(err);
+                });
         });
-    */
+    });
 
 
     /*
