@@ -74,18 +74,19 @@ Name: ... your name ...
 
 git checkout master
 
-git checkout -b update-userInformation-test
+git checkout -b get-teams-test
 
 
 git add -A
 
-git commit -m "Update user information tested"
+git commit -m "Get all teams tested"
 
-git add -A
+git commit -m "Get specific team tested"
 
-git commit -m "Invalid case of get specific user tested"
+git commit -m "Get all teams in specific project tested"
 
+git commit -m "Get specific team in specific project tested"
 
 git checkout master
 
-git merge update-userInformation-test
+git merge get-teams-test

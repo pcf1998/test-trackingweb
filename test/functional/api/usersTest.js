@@ -6,7 +6,7 @@ let mongoose = require('../../../routes/db');
 
 describe("User", () => {
 
-    before(function (done) {
+    beforeEach((done) => {
         let username = 'leopan';
         let password = 'leo123456';
         let mongodburl = 'mongodb+srv://' + username + ':' + password + '@wit-tracking-system-cluster-t9uwg.mongodb.net/tracingsdb';
@@ -15,7 +15,6 @@ describe("User", () => {
         let db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error'));
         db.once('open', function () {
-            console.log('We are connected to MongoDB Atlas!');
             done();
         });
     });
@@ -330,9 +329,6 @@ describe("User", () => {
                 });
         });
     });
-
-
-
 
     describe("DELETE /users/:userID", () => {
 

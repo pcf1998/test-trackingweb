@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=dev && node bin/www",
-    "test": "NODE_ENV=test mocha test/functional/api --exit"
+    "test": "NODE_ENV=test mocha test/functional/api/teamsTest.js --exit"
   },
   "dependencies": {
     "bcrypt": "^3.0.6",

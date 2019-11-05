@@ -7,7 +7,7 @@ let mongoose = require('../../../routes/db');
 
 describe("Tracing", () => {
 
-    before(function (done) {
+    beforeEach((done) => {
         let username = 'leopan';
         let password = 'leo123456';
         let mongodburl = 'mongodb+srv://' + username + ':' + password + '@wit-tracking-system-cluster-t9uwg.mongodb.net/tracingsdb';
@@ -16,7 +16,6 @@ describe("Tracing", () => {
         let db = mongoose.connection;
         db.on('error', console.error.bind(console, 'connection error'));
         db.once('open', function () {
-            console.log('We are connected to MongoDB Atlas!');
             done();
         });
     });
@@ -73,7 +72,7 @@ describe("Tracing", () => {
         });
     });
 
-    /*describe("POST /tracings", () => {
+    describe("POST /tracings", () => {
         it("should return confirmation message and update Tracing", () => {
             let tracing = {
                 projectName: "test"
@@ -406,6 +405,6 @@ describe("Tracing", () => {
         });
 
 
-    });*/
+    });
 
 });
