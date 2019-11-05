@@ -123,20 +123,18 @@ describe("Task", () => {
 
     });
 
-    /*
-        describe("GET /tracings/:projectID/teams/:teamID/tasks/", () => {
-            it("should return all tasks in the team", done => {
-                request(server)
-                    .get(`/tracings/5db57b283e7f3c0666c9c0b8/teams/5db58d338b292e0a03a64b53/tasks`)
-                    .set("Accept", "application/json")
-                    .expect("Content-Type", /json/)
-                    .expect(200)
-                    .end((err, res) => {
-                        done(err);
-                    });
-            });
+    describe("GET /tracings/:projectID/teams/:teamID/tasks/", () => {
+        it("should return all tasks in the team", done => {
+            request(server)
+                .get(`/tracings/5db57b283e7f3c0666c9c0b8/teams/5db58d338b292e0a03a64b53/tasks`)
+                .set("Accept", "application/json")
+                .expect("Content-Type", /json/)
+                .expect(200)
+                .end((err, res) => {
+                    done(err);
+                });
         });
-    */
+    });
 
     /*
         describe("GET /tracings/:projectID/teams/:teamID/tasks/:taskID", () => {
